@@ -1,6 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'; 
 
-export const GifGriditem = ({id,  title, url}) => {
+
+export const GifGriditem = ({title, url}) => {
 
     return (
         <div className="card animate__animated animate__fadeIn">
@@ -8,4 +10,8 @@ export const GifGriditem = ({id,  title, url}) => {
             <p>{title}</p>
         </div>
     )
+}
+GifGriditem.ProtoTypes = {
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired
 }

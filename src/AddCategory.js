@@ -3,23 +3,24 @@ import PropTypes from 'prop-types';
 
 export const AddCategory = ({setCategories}) => {
 
-    const [inputValue, setIInputValue] = useState('')
+    const [inputValue, setInputValue] = useState('')
     const handleInputChange = (e) => {
-        
-        setIInputValue(e.target.value)
+        setInputValue(e.target.value)
+        console.log('handleInputChange')
     }
     const handelSubmit   = (e) => {
         e.preventDefault();
 
         if(inputValue.trim().length > 2){
             setCategories(cats => [inputValue, ...cats]);
-            setIInputValue('');
+            setInputValue('');
         }
 
     }
 
     return (
         <form onSubmit={handelSubmit}>
+            <p>{inputValue}</p>
             <input 
                 type="text"
                 value={inputValue}
